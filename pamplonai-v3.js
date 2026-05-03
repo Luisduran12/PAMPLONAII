@@ -153,9 +153,9 @@ async function sendMessage() {
         localStorage.setItem('campus_history', JSON.stringify(msgHistory));
 
     } catch (err) {
-        console.error(err);
-        typingRow.remove();
-        drawBubble(false, "❌ ERROR: " + err.message + ". Verifica que Render tenga la API KEY.");
+        console.error("DEBUG_ERROR:", err);
+        if (typingRow) typingRow.remove();
+        drawBubble(false, "🔴 ERROR_CRITICO: " + err.message + ". ¿Agregaste la llave GROQ_API_KEY en Render?");
     } finally {
         isBusy = false;
         scrollBottom();
