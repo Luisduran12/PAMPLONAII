@@ -225,6 +225,6 @@ class GroqService:
                                 continue
         except Exception as exc:
             logger.exception("Error en Groq: %s", exc)
-            yield "Hubo un problema técnico al conectar con la IA."
+            yield f"ERROR_DETALLE: {type(exc).__name__}: {str(exc)[:200]}"
 
 groq_service = GroqService()
