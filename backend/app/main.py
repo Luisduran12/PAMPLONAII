@@ -69,22 +69,15 @@ app = FastAPI(
 
 
 # =====================================================================
-# CONFIGURACIÓN CORS PARA PRODUCCIÓN (Vercel + Render)
+# CORS UNIVERSAL (Solución definitiva para Vercel)
 # =====================================================================
-origins = [
-    "https://pamplonaii.vercel.app",
-    "https://pamplonaii.vercel.app/",
-    "http://localhost:8000",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-logger.info("CORS POLICY: Aplicada para %s", origins)
 
 
 # =====================================================================
