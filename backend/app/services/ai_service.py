@@ -57,17 +57,12 @@ class AIService:
 
     async def get_answer_stream(self, message: str, history: Optional[List[Dict[str, str]]] = None):
         """Generador asíncrono que alimenta el streaming."""
-        # 1. Aseguramos noticias frescas si aplica
-        if not news_service.latest_news:
-            await news_service.fetch_latest_news()
+        # NOTA: News y web scraping desactivados en producción (Render Free Tier).
+        # Causan timeouts al intentar hacer scraping de páginas web externas.
+        # El conocimiento académico está integrado en el system prompt de Groq.
 
         # 2. Contexto local (reglamento + calendario)
         context = self._build_context(message)
-
-        # 3. Contexto web en tiempo real desde páginas oficiales
-        web_ctx = await web_search_service.get_context_for_query(message)
-        if web_ctx:
-            context = context + "\n\nINFORMACIÓN EN TIEMPO REAL DE LA WEB OFICIAL:\n" + web_ctx
 
         async for chunk in groq_service.generate_response(
             user_message=message,
@@ -75,6 +70,7 @@ class AIService:
             extra_context=context,
         ):
             yield chunk
+
 
 # Instancia única
 ai_service = AIService()
