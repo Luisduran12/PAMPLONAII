@@ -12,6 +12,19 @@ const themeIcon = document.getElementById('theme-icon');
 const avatarEmoji = document.getElementById('avatar-emoji');
 const statusText = document.getElementById('status-text');
 
+// ── Mobile Menu Logic ───────────────────────────────────────────────────
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+function toggleMenu() {
+    sidebar.classList.toggle('active');
+    sidebarOverlay.classList.toggle('active');
+}
+
+if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleMenu);
+
 // ── Estado ──────────────────────────────────────────────────────────────
 // IMPORTANTE: No usar "history" — es window.history, variable reservada del navegador.
 let msgHistory = [];

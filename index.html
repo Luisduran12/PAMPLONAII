@@ -18,43 +18,44 @@
 
     <div id="app">
 
-        <!-- ═══ SIDEBAR ═══ -->
-        <aside id="sidebar">
+        <!-- Sidebar -->
+        <div id="sidebar-overlay"></div>
+        <aside id="sidebar" class="mobile-hidden">
             <div class="sidebar-logo">
                 <div class="logo-badge">UP</div>
-                <span>Unipamplona</span>
+                <span>PAMPLON-AI</span>
             </div>
+
             <nav class="sidebar-nav">
-                <button class="nav-item active" id="btn-chat" title="Chat">
-                    <i class="fas fa-comment-dots"></i>
-                    <span>Asistente</span>
+                <button class="nav-item active">
+                    <i class="fas fa-comment-alt"></i>
+                    Asistente
                 </button>
-                <button class="nav-item" id="btn-theme" title="Cambiar tema">
+                <button class="nav-item" id="btn-theme">
                     <i class="fas fa-moon" id="theme-icon"></i>
-                    <span>Tema</span>
+                    Tema
                 </button>
             </nav>
+
             <div class="sidebar-footer">
-                <button class="nav-item" id="btn-clear" title="Nueva conversación">
-                    <i class="fas fa-plus"></i>
-                    <span>Nuevo chat</span>
+                <button class="nav-item" id="btn-clear">
+                    <i class="fas fa-trash-alt"></i>
+                    Nuevo chat
                 </button>
             </div>
         </aside>
 
-        <!-- ═══ ÁREA PRINCIPAL ═══ -->
+        <!-- Main Chat Area -->
         <main id="main">
-
-            <!-- HEADER -->
             <header id="chat-header">
                 <div class="bot-identity">
-                    <div class="bot-avatar">
-                        <span id="avatar-emoji">🎓</span>
-                        <span class="status-dot"></span>
-                    </div>
-                    <div>
+                    <button id="menu-toggle" class="header-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="bot-avatar" id="avatar-emoji">🎓</div>
+                    <div class="bot-info">
                         <h1>PamplonAI</h1>
-                        <p id="status-text">En línea · Asistente académico Unipamplona</p>
+                        <div id="status-text">En línea · PamplonAI</div>
                     </div>
                 </div>
             </header>
