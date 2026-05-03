@@ -18,12 +18,16 @@ class GroqService:
 
     def __init__(self) -> None:
         self.url = f"{settings.GROQ_BASE_URL}/chat/completions"
-        self.headers = {
+        self.model = settings.GROQ_MODEL
+        self.timeout = settings.GROQ_TIMEOUT
+
+    @property
+    def headers(self):
+        """Headers generados dinámicamente para leer la API key actualizada."""
+        return {
             "Authorization": f"Bearer {settings.GROQ_API_KEY}",
             "Content-Type": "application/json",
         }
-        self.model = settings.GROQ_MODEL
-        self.timeout = settings.GROQ_TIMEOUT
 
     @staticmethod
     def build_system_prompt(context: str = "") -> str:
