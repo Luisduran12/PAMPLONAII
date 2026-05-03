@@ -4,6 +4,4 @@ __pycache__/
 venv/
 .env
 .DS_Store
-backend/data/reglamento.pdf
-backend/data/calendario.xlsx
 .gemini/
