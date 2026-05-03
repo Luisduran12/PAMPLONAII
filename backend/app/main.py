@@ -114,6 +114,24 @@ async def health_check():
     }
 
 
+@app.get("/api/test-groq")
+async def test_groq():
+    """Prueba directa de conectividad con Groq desde este servidor."""
+    import httpx
+    key = settings.GROQ_API_KEY or ""
+    if not key or key == "TU_API_KEY_AQUI":
+        return {"error": "NO_API_KEY"}
+    try:
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            resp = await client.post(
+                f"{settings.GROQ_BASE_URL}/chat/completions",
+                headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+                json={"model": settings.GROQ_MODEL, "messages": [{"role": "user", "content": "Di solo: OK"}], "max_tokens": 5}
+            )
+            return {"status": resp.status_code, "body": resp.text[:500]}
+    except Exception as e:
+        return {"error": str(e), "type": type(e).__name__}
+
 # Registramos el router con todos los endpoints /api/*
 app.include_router(chat_router.router)
 
