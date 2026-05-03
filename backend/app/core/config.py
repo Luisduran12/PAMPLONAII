@@ -30,7 +30,7 @@ class Settings:
 
     # ------------- Configuración general -------------
     # Nombre de la app (aparece en la documentación de FastAPI)
-    APP_NAME: str = os.getenv("APP_NAME", "CampusAI")
+    APP_NAME: str = os.getenv("APP_NAME", "PamplonAI-V2-Prod")
 
     # Modo debug: activa logs detallados y CORS abierto a cualquier origen
     DEBUG: bool = os.getenv("DEBUG", "False").lower() == "true"
