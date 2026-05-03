@@ -68,13 +68,8 @@ app = FastAPI(
 )
 
 
-# =====================================================================
-# CORS: permite que el frontend (en otro puerto/dominio) llame al API
-# =====================================================================
-# En DEBUG abrimos a todos. En producción restringe a tu dominio real.
-allowed_origins = ["*"] if settings.DEBUG else [
-    "https://tu-dominio-real.com",       # AJUSTA aquí cuando despliegues
-]
+# CORS: permite que el frontend llame al API desde cualquier origen en producción.
+allowed_origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,

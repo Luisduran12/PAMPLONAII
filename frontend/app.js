@@ -1,7 +1,5 @@
-/**
- * PamplonAI · Asistente Académico · Universidad de Pamplona
- * Versión estable: sin bugs de decoder, sin isBusy atascado.
- */
+// ── Configuración ───────────────────────────────────────────────────────
+const API_URL = "https://pamplonaii.onrender.com";
 
 // ── DOM refs ────────────────────────────────────────────────────────────
 const chatWindow = document.getElementById('chat-window');
@@ -131,7 +129,7 @@ function renderHistory() {
 // ── Sugerencias ─────────────────────────────────────────────────────────
 async function loadSuggestions() {
     try {
-        const res = await fetch('/api/faqs');
+        const res = await fetch(`${API_URL}/api/faqs`);
         if (!res.ok) return;
         const faqs = await res.json();
         const pick = [...faqs].sort(() => Math.random() - .5).slice(0, 5);
@@ -182,7 +180,7 @@ async function sendMessage() {
     let msgSource = 'ai';
 
     try {
-        const res = await fetch('/api/chat', {
+        const res = await fetch(`${API_URL}/api/chat`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -382,7 +380,7 @@ function addFeedbackBtns(container, question, answer, source) {
             feedRow.querySelectorAll('.feedback-btn').forEach(b => { b.disabled = true; });
             btn.classList.add(i === 0 ? 'active-good' : 'active-bad');
             try {
-                await fetch('/api/feedback', {
+                await fetch(`${API_URL}/api/feedback`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ question, answer, rating: i === 0 ? 1 : 0, source })
