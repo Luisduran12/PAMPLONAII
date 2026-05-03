@@ -99,10 +99,18 @@ async def global_exception_handler(request: Request, exc: Exception):
 @app.get("/api/health")
 async def health_check():
     """Endpoint de salud para monitoreo. Devuelve 200 si la app está viva."""
+    key = settings.GROQ_API_KEY or ""
+    key_status = "NO CONFIGURADA"
+    key_hint = ""
+    if key and key != "TU_API_KEY_AQUI":
+        key_status = "CONFIGURADA"
+        key_hint = f"{key[:8]}...{key[-4:]}"
     return {
         "status": "ok",
         "app": settings.APP_NAME,
         "model": settings.GROQ_MODEL,
+        "groq_key": key_status,
+        "key_hint": key_hint,
     }
 
 
