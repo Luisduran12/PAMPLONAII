@@ -68,8 +68,13 @@ app = FastAPI(
 )
 
 
-# CORS: permite que el frontend llame al API desde cualquier origen en producción.
-allowed_origins = ["*"]
+# CORS: Configuración profesional para producción
+# Permitimos explícitamente el dominio de Vercel y localhost para pruebas locales
+allowed_origins = [
+    "https://pamplonaii.vercel.app",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000"
+]
 
 app.add_middleware(
     CORSMiddleware,
