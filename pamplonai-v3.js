@@ -25,12 +25,21 @@ function toggleMenu() {
 if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
 if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleMenu);
 
+// ── Versión de caché (cambia esto para limpiar localStorage automáticamente) ──
+const CACHE_VERSION = "v4";
+
 // ── Estado ──────────────────────────────────────────────────────────────
 let msgHistory = [];
 let isBusy = false;
 let currentTheme = 'light';
 
 try {
+    // Si la versión cambió, borramos el historial viejo
+    const savedVersion = localStorage.getItem('campus_version');
+    if (savedVersion !== CACHE_VERSION) {
+        localStorage.removeItem('campus_history');
+        localStorage.setItem('campus_version', CACHE_VERSION);
+    }
     const saved = localStorage.getItem('campus_history');
     if (saved) msgHistory = JSON.parse(saved);
     currentTheme = localStorage.getItem('campus_theme') || 'light';
