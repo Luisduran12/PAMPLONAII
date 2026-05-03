@@ -68,19 +68,12 @@ app = FastAPI(
 )
 
 
-# CORS: Configuración profesional para producción
-allowed_origins = [
-    "https://pamplonaii.vercel.app",
-    "https://pamplonaii.vercel.app/",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000"
-]
-
+# CORS: Apertura total para compatibilidad con Vercel
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=True,
-    allow_methods=["*"],         # GET, POST, etc.
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
