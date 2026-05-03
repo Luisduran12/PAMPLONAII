@@ -110,11 +110,9 @@ async def health_check():
 app.include_router(chat_router.router)
 
 
-# =====================================================================
 # Servir el frontend estático (HTML/CSS/JS)
-# =====================================================================
-# La ruta "../frontend" está relativa a /backend, donde se ejecuta uvicorn.
-FRONTEND_DIR = Path(__file__).resolve().parent.parent.parent / "frontend"
+# Ahora el frontend vive en la raíz del repositorio para compatibilidad con Vercel.
+FRONTEND_DIR = Path(__file__).resolve().parent.parent.parent
 
 if FRONTEND_DIR.exists():
     # html=True hace que / sirva index.html automáticamente
