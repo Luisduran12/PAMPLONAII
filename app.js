@@ -97,7 +97,7 @@ function renderWelcome() {
     const greetText = document.createElement('span');
     greetText.textContent = getGreeting() + ' Soy ';
     const strong = document.createElement('strong');
-    strong.textContent = 'PamplonAI';
+    strong.textContent = 'Pamplon-AI';
     greetText.appendChild(strong);
     greeting.appendChild(greetText);
 
