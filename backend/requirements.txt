@@ -1,0 +1,29 @@
+# =====================================================================
+# DEPENDENCIAS - CampusAI Backend
+# =====================================================================
+# Instala con: pip install -r requirements.txt
+# =====================================================================
+
+# Framework web asíncrono
+fastapi>=0.115.0
+
+# Servidor ASGI para correr FastAPI
+uvicorn[standard]>=0.32.0
+
+# Carga variables desde .env
+python-dotenv>=1.0.1
+
+# Manipulación de datos tabulares (CSV, XLSX)
+pandas>=2.0.0
+
+# Lector de archivos Excel para pandas
+openpyxl>=3.1.0
+
+# Lectura de PDFs (sucesor moderno de PyPDF2)
+pypdf>=5.0.0
+
+# Cliente HTTP asíncrono para llamar a la API de Groq
+httpx>=0.27.0
+
+# Validación de datos (viene con FastAPI pero se especifica para asegurar versión)
+pydantic>=2.0.0

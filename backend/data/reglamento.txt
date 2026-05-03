@@ -1,0 +1,37 @@
+REGLAMENTO ESTUDIANTIL - EXTRACTO DE EJEMPLO
+=============================================
+
+Este es un archivo de texto de ejemplo. En producción, reemplázalo
+por reglamento.pdf con el reglamento real de tu institución.
+
+ARTÍCULO 1. INSCRIPCIÓN ACADÉMICA
+El estudiante debe inscribir sus asignaturas dentro de las fechas
+establecidas en el calendario académico oficial.
+
+ARTÍCULO 2. PÉRDIDA DE ASIGNATURAS
+Si un estudiante pierde la misma asignatura por tercera vez,
+quedará en condicional académica.
+
+ARTÍCULO 3. ASISTENCIA
+La asistencia mínima requerida es del 80% de las clases. Quien no
+cumpla este porcentaje pierde la asignatura por inasistencia.
+
+ARTÍCULO 4. EVALUACIONES
+Las evaluaciones se distribuyen así:
+- Primer parcial: 30%
+- Segundo parcial: 30%
+- Examen final: 40%
+
+ARTÍCULO 5. HOMOLOGACIONES
+Las solicitudes de homologación se reciben durante las primeras
+dos semanas del semestre. El comité académico tiene 15 días
+hábiles para responder.
+
+ARTÍCULO 6. CERTIFICADOS
+Los certificados académicos se solicitan a través del portal y
+se entregan en un plazo de 48 horas hábiles.
+
+ARTÍCULO 7. CAMBIOS DE PROGRAMA
+El cambio de programa requiere un promedio mínimo de 3.5,
+formulario de solicitud y entrevista con el director del
+programa destino.

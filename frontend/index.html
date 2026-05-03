@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PamplonAI · Asistente Académico · Unipamplona</title>
+    <meta name="description" content="Asistente académico inteligente de la Universidad de Pamplona">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- ═══ SIDEBAR ═══ -->
+        <aside id="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-badge">UP</div>
+                <span>Unipamplona</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" id="btn-chat" title="Chat">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Asistente</span>
+                </button>
+                <button class="nav-item" id="btn-theme" title="Cambiar tema">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                    <span>Tema</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="nav-item" id="btn-clear" title="Nueva conversación">
+                    <i class="fas fa-plus"></i>
+                    <span>Nuevo chat</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ═══ ÁREA PRINCIPAL ═══ -->
+        <main id="main">
+
+            <!-- HEADER -->
+            <header id="chat-header">
+                <div class="bot-identity">
+                    <div class="bot-avatar">
+                        <span id="avatar-emoji">🎓</span>
+                        <span class="status-dot"></span>
+                    </div>
+                    <div>
+                        <h1>PamplonAI</h1>
+                        <p id="status-text">En línea · Asistente académico Unipamplona</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- VENTANA DE CHAT -->
+            <div id="chat-window">
+                <!-- Los mensajes se inyectan aquí -->
+            </div>
+
+            <!-- CHIPS DE SUGERENCIA -->
+            <div id="suggestions-bar">
+                <div id="suggestions-container"></div>
+            </div>
+
+            <!-- INPUT -->
+            <div id="input-area">
+                <div id="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Pregúntale a Pampi algo..." autocomplete="off"
+                        maxlength="500" />
+                    <button id="send-btn" aria-label="Enviar">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p id="input-hint">Presiona <kbd>Enter</kbd> para enviar</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
